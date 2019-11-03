@@ -44,7 +44,7 @@ steps:
       **/*.dacpac
       **/PokerLeagueManager.Commands.WebApi.zip
       **/PokerLeagueManager.events.WebApi.Zip
-      **/PokerLeagueManager.Queriees.WebApi.zip
+      **/PokerLeagueManager.Queries.WebApi.zip
       **/PokerLeagueManager.UI.Web.zip
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     flattenFolders: true
