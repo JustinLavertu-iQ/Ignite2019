@@ -39,20 +39,23 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)\deploy'
-    Contents: |
-      **/*WebApi.zip
-      **/*Web.zip
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-    flattenFolders: true
-
-- task: CopyFiles@2
-  inputs:
     SourceFolder: '$(Build.SourcesDirectory)'
     Contents: '**/*.dacpac'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     flattenFolders: true
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)\deploy'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/deploy'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/src/PokerLeagueManager.Utilities/bind/Debug'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/Utility'
+    flattenFolders: true
 
 
 - task: PublishBuildArtifacts@1
